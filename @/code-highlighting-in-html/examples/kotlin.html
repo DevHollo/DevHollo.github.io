@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Highlighting Example (kotlin)</title>
+        <link rel="stylesheet" type="text/css" href="../css/codemirror.css">
+        <script src="../js/codemirror.js"></script>
+        <script src="../js/langs/kotlin.js"></script>
+        <script defer src="../js/loaders/kotlin.js" defer></script>
+    </head>
+    <body>
+        <pre><kt-code>
+// this is a comment
+
+package org.wasabi.http
+
+import java.util.concurrent.Executors
+import java.net.InetSocketAddress
+import org.wasabi.app.AppConfiguration
+import io.netty.bootstrap.ServerBootstrap
+import io.netty.channel.nio.NioEventLoopGroup
+import io.netty.channel.socket.nio.NioServerSocketChannel
+import org.wasabi.app.AppServer
+
+public class HttpServer(private val appServer: AppServer) {
+
+    val bootstrap: ServerBootstrap
+    val primaryGroup: NioEventLoopGroup
+    val workerGroup:  NioEventLoopGroup
+
+    init {
+        // Define worker groups
+        primaryGroup = NioEventLoopGroup()
+        workerGroup = NioEventLoopGroup()
+
+        // Initialize bootstrap of server
+        bootstrap = ServerBootstrap()
+
+        bootstrap.group(primaryGroup, workerGroup)
+        bootstrap.channel(javaClass&lt;NioServerSocketChannel>())
+        bootstrap.childHandler(NettyPipelineInitializer(appServer))
+    }
+
+    public fun start(wait: Boolean = true) {
+        val channel = bootstrap.bind(appServer.configuration.port)?.sync()?.channel()
+
+        if (wait) {
+            channel?.closeFuture()?.sync()
+        }
+    }
+
+    public fun stop() {
+        // Shutdown all event loops
+        primaryGroup.shutdownGracefully()
+        workerGroup.shutdownGracefully()
+
+        // Wait till all threads are terminated
+        primaryGroup.terminationFuture().sync()
+        workerGroup.terminationFuture().sync()
+    }
+}
+        </kt-code></pre>
+    </body>
+</html>
