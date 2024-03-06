@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Highlighting Example (lua)</title>
+        <link rel="stylesheet" type="text/css" href="https://devhollo.github.io/@/code-highlighting-in-html/css/codemirror.css">
+        <script src="https://devhollo.github.io/@/code-highlighting-in-html/js/codemirror.js"></script>
+        <script src="https://devhollo.github.io/@/code-highlighting-in-html/js/langs/lua.js"></script>
+        <script src="https://devhollo.github.io/@/code-highlighting-in-html/js/loaders/lua.js" defer></script>
+    </head>
+    <body>
+        <pre><lua-code>
+-- this is a comment
+
+function say(to_say)
+    print(to_say)
+end
+
+for i = 1, 100 do
+    say(i)
+end      
+        </lua-code></pre>
+    </body>
+</html>
