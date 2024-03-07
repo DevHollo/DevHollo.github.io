@@ -1,5 +1,5 @@
 /*
-This file was made by @
+This file was made by @_.hollo._ on Discord
 */
 const indent = 4;
 const indent_str = '    ';
@@ -126,7 +126,7 @@ function h1_clicked() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const timeout_time = 3200; // default is 1200
+    const timeout_time = 1300; // default is 1200
     setTimeout(function() {
         const urlParams = new URLSearchParams(window.location.search);
         const langParam = urlParams.get('lang');
