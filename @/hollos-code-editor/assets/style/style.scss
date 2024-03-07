@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Black+Ops+One|Cherry+Swash|Linefont");
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #7c7c7c;
+    color: #fff;
+}
+
+a {
+    color: #c70000;
+    text-decoration: none;
+    &:hover {
+        color: #26e200;;
+        text-decoration: underline;
+    }
+    &:active {
+        text-decoration: underline solid;
+    }
+}
+
+h1 {
+    font-family: 'Black Ops One';
+    font-size: 50px;
+    text-decoration: wavy;
+    &:active {
+        color: #26e200;
+    }
+    &:hover {
+        color: #c70000;
+    }
+}
+
+button {
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:4px 6px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+    &:hover {
+        background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	    background-color:#6c7c7c;
+    }
+    &:active {
+        position:relative;
+	    top:1px;
+    }
+}
+
+#spacer {
+    font-family: 'Linefont';
+}
+
+.backbutton {
+    box-shadow:inset 0px 1px 0px 0px #9c0c0c;
+    background:linear-gradient(to bottom, #ff0000 5%, #730808 100%);
+    background-color:#ff0000;
+    border-radius:6px;
+    border:1px solid #ff8f8f;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:'Cherry Swash';
+    font-size:11px;
+    font-weight:bold;
+    padding:3px 11px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+    &:hover {
+        background:linear-gradient(to bottom, #730808 5%, #ff0000 100%);
+        background-color:#730808;
+    }
+    &:active {
+        position:relative;
+        top:1px;
+    }
+}
+
+.newline {
+    margin-bottom: 20px;
+}
