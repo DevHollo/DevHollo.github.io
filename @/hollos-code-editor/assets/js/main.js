@@ -1,6 +1,4 @@
-/*
-This file was made by @_.hollo._ on Discord
-*/
+// This file was made by @_.hollo._ on Discord
 const indent = 4;
 const indent_str = '    ';
 const languages = [
@@ -122,7 +120,8 @@ function changeLanguage(index) {
 }
 
 function h1_clicked() {
-    window.location.href = '';
+    alert("Ur Mom");
+    window.open('');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -134,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             languages_index = parseInt(langParam);
         }
         document.body.innerHTML = `
-<a href="/@/"><button class="backbutton">Back To Home</button></a>
+<a href="/@/"><button class="backbutton">Back To Home</button></a><br/>
 <input type="file" id="fileInput">
 <button onclick="readFile()">Load File</button> |
 <button onclick="saveFile()">Save File (Broken)</button> |
