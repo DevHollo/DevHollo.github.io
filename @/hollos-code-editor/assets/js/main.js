@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             languages_index = parseInt(langParam);
         }
         document.body.innerHTML = `
-<a href="/@/"><button class="backbutton">Back To Home</button></a><br/>
+<a href="/@/"><button class="backbutton">Back</button></a><br/>
 <input type="file" id="fileInput">
 <button onclick="readFile()">Load File</button> |
 <button onclick="saveFile()">Save File (Broken)</button> |
