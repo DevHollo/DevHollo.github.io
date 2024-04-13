@@ -117,3 +117,7 @@
     background-color: #ffffff;
     color: #000;
 }
+.itch_io {
+    background-color: hwb(0 46% 0%);
+    color: #000;
+}
