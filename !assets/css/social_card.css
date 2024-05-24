@@ -8,6 +8,136 @@
     justify-content: flex-start;
     align-items: flex-end;
     min-height: 100vh;
+}.social-header {
+    font-family: Arial, sans-serif;
+}
+.bd {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    min-height: 100vh;
+}
+.social-card {
+    width: 300px;
+    padding: 20px;
+    background-color: #d0ecff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+.social-button {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/* Social Button colors */
+.discord {
+    background-color: #7289da;
+    color: #000;
+}
+.twitter {
+    background-color: #1da1f2;
+    color: #000;
+}
+.twitch {
+    background-color: #9310d0;
+    color: #fff;
+}
+.tiktok {
+    background-color: #660073;
+    color: #fff;
+}
+.youtube {
+    background-color: #ff0000;
+    color: #fff;
+}
+.scratch {
+    background-color: #ed721a;
+    color: #000;
+}
+.replit {
+    background-color: #cb6f3d;
+    color: #000;
+}
+.roblox {
+    background-color: #545454;
+    color: #fff;
+}
+.vrchat {
+    background-color: #cfcfcf;
+    color: #000;
+}
+.recnet {
+    background-color: #af6121;
+    color: #fff;
+}
+.furaffinity {
+    background-color: #90b6ce;
+    color: #000;
+}
+.github {
+    background-color: #000000;
+    color: #fff;
+}
+.stackoverflow {
+    background-color: #d16f3a;
+    color: #000;
+}
+.duolingo {
+    background-color: #2cb51a;
+    color: #fff;
+}
+.skindex {
+    background-color: hwb(29 4% 11%);
+    color: #000;
+}
+.namemc {
+    background-color: hsl(0, 0%, 24%);
+    color: #fff;
+}
+.planetminecraft {
+    background-color: rgb(0, 106, 193);
+    color: #fff;
+}
+.kick {
+    background-color: hsl(112, 100%, 50%);
+    color: #000;
+}
+.pypi {
+    background-color: #ffe45e;
+    color: #000;
+}
+.steam {
+    background-color: #100057;
+    color: #fff;
+}
+.sketchfab {
+    background-color: #5eb6ff;
+    color: #000;
+}
+.fandom_com {
+    background-color: #fa005a;
+    color: #fff;
+}
+.oculus {
+    background-color: #ffffff;
+    color: #000;
+}
+.itch_io {
+    background-color: hwb(0 46% 0%);
+    color: #000;
+}
+.brick_hill {
+    background-color: #0858c2;
+    color: #fff;
+}
+.guilded {
+    background-color: #ffbb00;
+    color: #000;
 }
 .social-card {
     width: 300px;
