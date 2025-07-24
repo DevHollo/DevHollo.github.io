@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Linefont|Cherry+Swash|Knewave");
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #771e68;
+    font-family: 'Cherry Swash';
+    color: #000000;
+    font-size: 17px;
+}
+h1 {
+    font-size: 65px;
+    font-family: 'Knewave';
+    color: rgb(48, 34, 92);
+}
+.newline {
+    margin-bottom: 20px;
+}
+#left-box {
+    width: 650px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #49265e;
+    text-align: left;
+}
+#spacer {
+    font-family: 'Linefont';
+}
