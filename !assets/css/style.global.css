@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "JS Font";
+    src: url("../fonts/otf/NeutrafaceTextBold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Exo Reg";
+    src: url("../fonts/otf/Exo-SemiBold.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Linefont";
+    src: url("../fonts/ttf/Linefont_Condensed-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Karla";
+    src: url("../fonts/ttf/Karla-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ---------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo Reg';
+    background: #f5f7fa;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 250px;
+    background: #323136;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ff7f32;
+}
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    color: #ddd;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.sidebar a:hover {
+    background: #ff7f32;
+    color: #fff;
+    transform: scale(1.05);
+}
+.sidebar a:active {
+    transform: scale(0.95);
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    background-color: #7a7a7a;
+}
+.content p {
+    line-height: 1.6;
+}
+
+footer {
+    background: #323136;
+    color: #ff7f32;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+.footer-a {
+    color: #ff7f32;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-a:hover {
+    color: #10e22c;
+    text-decoration: underline;
+}
+
+#title {
+    font-size: 65px;
+    margin-bottom: 15px;
+    font-family: 'JS Font';
+    color: #333;
+}
+
+#maintext {
+    font-family: 'Karla';
+    font-size: 17px;
+}
+
+.spacer {
+    font-family: 'Linefont';
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+    margin-bottom: 12px;
+}
+
+.sidebar-img:hover {
+    cursor: pointer;
+}
+
+ul {
+    font-family: 'Karla';
+    font-size: 17px;
+}
