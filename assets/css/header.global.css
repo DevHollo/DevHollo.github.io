@@ -1,0 +1,106 @@
+header {
+    background: rgb(0,0,0);
+    box-shadow: rgb(50,50,50);
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 23px;
+    font-family: 'Roboto Mono';
+    z-index: 100;
+    position: fixed;
+    top: 0px;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
+    margin-bottom: 2px;
+}
+header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    background: rgb(0,0,0);
+    z-index: 5;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    margin-right: 6px;
+}
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(150, 150, 150);
+    display: block;
+    margin-left: 50px;
+    font-size: 20px;
+}
+nav ul li a.curcat {
+    color: rgb(200, 170, 0);
+}
+nav ul li a.curcat:hover {
+    color: rgb(255,215,0);
+}
+
+nav ul li a.curparent {
+    color: rgb(255, 215, 100);
+}
+nav ul li a.curparent:hover {
+    color: rgb(255, 235, 150);
+}
+nav a:hover {
+    color: #ffffff;
+    text-shadow: #cababa;
+}
+header ul li ul li {
+    display: block;
+}
+header ul li ul {
+    width: 200px;
+    background: #000000;
+    position: absolute;
+    z-index: 4;
+    display: none;
+}
+
+header ul li:hover ul {
+    display: block;
+}
+
+.nbitem {
+    scrollbar-width: none;
+}
+.nbitemNA {
+    scrollbar-width: none;
+    color: rgb(100, 0, 0)
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 20px;
+    animation: marquee 10s linear infinite;
+    user-select: none;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
