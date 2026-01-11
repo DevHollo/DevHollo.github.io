@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PC Specs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: default;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .spec-section {
+            margin-bottom: 30px;
+        }
+
+        .spec-section h2 {
+            color: #ff6b35;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff6b35;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .spec-value {
+            color: #333;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💻 PC Specifications</h1>
+        <p class="subtitle">HP OMEN 16</p>
+
+        <div class="spec-section">
+            <h2>Processor</h2>
+            <div class="spec-item">
+                <span class="spec-label">CPU</span>
+                <span class="spec-value">Intel Ultra 7 255H</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Base Speed</span>
+                <span class="spec-value">2.00 GHz</span>
+            </div>
+        </div>
+
+        <div class="spec-section">
+            <h2>Memory</h2>
+            <div class="spec-item">
+                <span class="spec-label">RAM</span>
+                <span class="spec-value">32 GB DDR5</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Speed</span>
+                <span class="spec-value">5600 MT/s</span>
+            </div>
+        </div>
+
+        <div class="spec-section">
+            <h2>Graphics</h2>
+            <div class="spec-item">
+                <span class="spec-label">GPU</span>
+                <span class="spec-value">NVIDIA GeForce RTX 5070 Laptop GPU</span>
+            </div>
+        </div>
+
+        <div class="spec-section">
+            <h2>Storage</h2>
+            <div class="spec-item">
+                <span class="spec-label">Primary Drive</span>
+                <span class="spec-value">1 TB NVMe SSD</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Secondary Drive</span>
+                <span class="spec-value">2 TB HDD USB Drive (Western Digital)</span>
+            </div>
+        </div>
+
+        <div class="spec-section">
+            <h2>System</h2>
+            <div class="spec-item">
+                <span class="spec-label">Primary OS</span>
+                <span class="spec-value">Windows 11 Home With AtlasOS Playbook</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">Secondary OS</span>
+                <span class="spec-value">NixOS</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
