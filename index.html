@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>coming soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0e0e0e;
+      color: #d4d4d4;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .terminal {
+      width: 600px;
+      max-width: 95vw;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.7);
+    }
+
+    .titlebar {
+      background: #1c1c1c;
+      padding: .5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .btn { width: 12px; height: 12px; border-radius: 50%; }
+    .btn.red    { background: #ff5f57; }
+    .btn.yellow { background: #febc2e; }
+    .btn.green  { background: #28c840; }
+    .title-text {
+      margin: 0 auto;
+      font-size: .7rem;
+      color: #555;
+      letter-spacing: .05em;
+    }
+
+    .body {
+      background: #0e0e0e;
+      padding: 1.4rem 1.6rem 1.8rem;
+      line-height: 2;
+    }
+
+    .line { display: flex; flex-wrap: wrap; gap: 0 .4em; opacity: 0; }
+    .line.show { animation: fadein .15s forwards; }
+    @keyframes fadein { to { opacity: 1; } }
+
+    .prompt-user  { color: #ff6a00; }
+    .prompt-host  { color: #ff6a00; }
+    .prompt-path  { color: #569cd6; }
+    .prompt-sym   { color: #d4d4d4; }
+    .cmd          { color: #d4d4d4; }
+    .output       { color: #888; }
+    .output.em    { color: #d4d4d4; }
+    .output.ok    { color: #28c840; }
+    .output.warn  { color: #febc2e; }
+    .output.orange{ color: #ff6a00; }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      background: #ff6a00;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+      opacity: 0;
+    }
+    .cursor.show { opacity: 1; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <div class="titlebar">
+      <div class="btn red"></div>
+      <div class="btn yellow"></div>
+      <div class="btn green"></div>
+      <span class="title-text">hollo@website — bash</span>
+    </div>
+    <div class="body" id="output"></div>
+  </div>
+
+  <script>
+    const out = document.getElementById('output');
+
+    const lines = [
+      { type: 'prompt', cmd: 'uptime' },
+      { type: 'output', cls: 'output', text: 'up 0 days, 0:00:01,  1 user,  load average: 0.00' },
+      { type: 'gap' },
+      { type: 'prompt', cmd: 'cat status.txt' },
+      { type: 'output', cls: 'output warn', text: '⚠  Site under construction.' },
+      { type: 'output', cls: 'output', text: 'Nothing to see here just yet.' },
+      { type: 'gap' },
+      { type: 'prompt', cmd: 'ls -1 ./coming-soon/' },
+      { type: 'output', cls: 'output orange', text: 'new_project/' },
+      { type: 'output', cls: 'output orange', text: 'cool_stuff/' },
+      { type: 'output', cls: 'output orange', text: 'more_things/' },
+      { type: 'gap' },
+      { type: 'prompt', cmd: 'echo "Check back soon."' },
+      { type: 'output', cls: 'output ok', text: 'Check back soon.' },
+      { type: 'gap' },
+      { type: 'cursor' },
+    ];
+
+    function makePrompt(cmd) {
+      const el = document.createElement('div');
+      el.className = 'line';
+      el.innerHTML = `
+        <span class="prompt-user">hollo</span><span class="prompt-sym">@</span><span class="prompt-host">website</span><span class="prompt-sym">:</span><span class="prompt-path">~</span><span class="prompt-sym">$</span>
+        <span class="cmd">${cmd}</span>`;
+      return el;
+    }
+
+    function makeOutput(cls, text) {
+      const el = document.createElement('div');
+      el.className = `line ${cls}`;
+      el.textContent = text;
+      return el;
+    }
+
+    function makeCursorLine() {
+      const el = document.createElement('div');
+      el.className = 'line';
+      el.innerHTML = `
+        <span class="prompt-user">hollo</span><span class="prompt-sym">@</span><span class="prompt-host">website</span><span class="prompt-sym">:</span><span class="prompt-path">~</span><span class="prompt-sym">$</span>
+        <span class="cursor" id="cur"></span>`;
+      return el;
+    }
+
+    let i = 0;
+    function next() {
+      if (i >= lines.length) return;
+      const l = lines[i++];
+      if (l.type === 'gap') {
+        out.appendChild(Object.assign(document.createElement('div'), { style: 'height:.3rem' }));
+        setTimeout(next, 60);
+        return;
+      }
+      if (l.type === 'cursor') {
+        const el = makeCursorLine();
+        out.appendChild(el);
+        el.classList.add('show');
+        setTimeout(() => document.getElementById('cur').classList.add('show'), 100);
+        return;
+      }
+      const el = l.type === 'prompt' ? makePrompt(l.cmd) : makeOutput(l.cls, l.text);
+      out.appendChild(el);
+      el.classList.add('show');
+      setTimeout(next, l.type === 'prompt' ? 320 : 110);
+    }
+
+    setTimeout(next, 400);
+  </script>
+</body>
+</html>
