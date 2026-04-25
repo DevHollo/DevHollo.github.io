@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'NerdIcons';
+  src: url('/assets/fonts/SymbolsNerdFontMono-Regular.ttf') format('truetype'),
+       url('/assets/fonts/SymbolsNerdFont-Regular.ttf') format('truetype');
+  font-display: swap;
+}
